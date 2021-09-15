@@ -1,0 +1,72 @@
+const router = require("express").Router();
+const guideReservation = require("../models/Guide_Reservation");
+
+router.route("/add").post((req,res)=>{
+
+    let No_of_Days = req.body.No_of_Days;
+    let Tour_place = req.body.Tour_place;
+    let Starting_point = req.body.Starting_point;
+    let Guide_ID = req.body.Guide_ID;
+
+    const guidereservationobj = new guideReservation({
+        No_of_Days,
+        Tour_place,
+        Starting_point,
+        Guide_ID
+    });
+
+    guidereservationobj.save().then(()=>{
+        res.json("Insert Data Successfully");
+    }).catch((err)=>{
+        console.log(err);
+    });
+
+});
+
+router.route("/").get((req,res)=>{
+
+    guideReservation.find().then((guideReservationData)=>{
+        res.json(guideReservationData);
+    }).catch((err)=>{
+        console.log(err);
+    });
+
+});
+
+router.route("/update/:id").put((req,res)=>{
+    
+    let id = req.params.id;
+
+    let No_of_Days = req.body.No_of_Days;
+    let Tour_place = req.body.Tour_place;
+    let Starting_point = req.body.Starting_point;
+    let Guide_ID = req.body.Guide_ID;
+
+    const updateGuideReservation = {
+        No_of_Days,
+        Tour_place,
+        Starting_point,
+        Guide_ID
+    }
+
+    guideReservation.findByIdAndUpdate(id,updateGuideRes).then((updateGuideRes)=>{
+        res.json(updateGuideRes);
+    }).catch((err)=>{
+        console.log(err);
+    });
+
+});
+
+router.route("/delete/:id").delete((req,res)=>{
+
+    let id = req.params.id;
+
+    guideReservation.findByIdAndDelete(id).then(()=>{
+        res.json("Delete Successfully");
+    }).catch((err)=>{
+        console.log(err);
+    });
+
+});
+
+module.exports = router;
