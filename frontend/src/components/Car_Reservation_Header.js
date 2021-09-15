@@ -1,0 +1,19 @@
+import React from 'react';
+//import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+export default function Car_Reservation_Header(){
+
+    return(
+
+        <div className="container-fluid">
+            <header>
+                <div className="p-1 mb-2 bg-info text-light mt-3 h-60 shadow-sm text-center">
+                    <h1 className="font-weight-bold">Car Reservation</h1>
+                </div>
+            </header>
+        </div>
+        
+    );
+
+}
