@@ -11,7 +11,7 @@ function navbar() {
             <Button  ><a href="#" style={{ textDecoration: "none" }}>Home</a></Button>
             <Button  ><a href="#" style={{ textDecoration: "none" }}>Stay</a></Button>
             <Button  ><a href="#" style={{ textDecoration: "none" }}>Tickets</a></Button>
-            <Button  ><a href="#" style={{ textDecoration: "none" }}>Ground Reservations</a></Button>
+            <Button  ><a href="/ground" style={{ textDecoration: "none" }}>Ground Reservations</a></Button>
             <Button  ><a href="#" style={{ textDecoration: "none" }}>Packages</a></Button>
             <Button  ><a href="#" style={{ textDecoration: "none" }}>Documents</a></Button>
             <Button  ><a href="#" style={{ textDecoration: "none" }}>Insurence</a></Button>

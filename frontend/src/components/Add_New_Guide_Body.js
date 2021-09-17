@@ -11,12 +11,13 @@ export default function AddNewGuideBodyForm() {
     const [Phone, setPhone] = useState("");
     const [Experience, setExperience] = useState("");
     const [Fee, setFee] = useState("");
+    const [Img, setImg] = useState("");
 
     function addNewGuiide(e) {
         e.preventDefault();
 
         const addGuide = {
-            Guide_ID, Full_Name, Age, Address, Email, Phone, Experience, Fee
+            Guide_ID, Full_Name, Age, Address, Email, Phone, Experience, Fee,Img
         }
 
         axios.post("http://localhost:8080/guide/add", addGuide).then(() => {
@@ -24,6 +25,7 @@ export default function AddNewGuideBodyForm() {
         }).catch((err) => {
             alert(err);
         });
+        window.location.reload();
     }
 
     const [Guides, setGuides] = useState([]);
@@ -44,7 +46,7 @@ export default function AddNewGuideBodyForm() {
         }).catch((err)=>{
             alert(err);
         })
-
+        window.location.reload();
     }
 
     return (
@@ -52,12 +54,12 @@ export default function AddNewGuideBodyForm() {
 
             <div className="row">
 
-                <div className="bg-dark p-5 mt-4 text-light">
-                    <h1 className="p-2 mt-1 bg-info">
+                <div className="p-4 mt-2 text-light" style={{backgroundColor:"ButtonShadow"}}>
+                    <h1 className="p-2 bg-info">
                         Add New Guide
                     </h1>
                     <div className="row">
-                        <form className="mt-4" onSubmit={addNewGuiide}>
+                        <form className="mt-2" onSubmit={addNewGuiide}>
                             <div className="row">
                                 <div className="col-lg-2"></div>
                                 <div className="col-lg-4">
@@ -102,8 +104,6 @@ export default function AddNewGuideBodyForm() {
                                             }
                                             } />
                                     </div>
-                                </div>
-                                <div className="col-lg-4">
                                     <div className="form-group">
                                         <label>Guide ID</label>
                                         <input type="text" name="guideid" id="guideid" className="form-control"
@@ -112,6 +112,8 @@ export default function AddNewGuideBodyForm() {
                                             }
                                             } />
                                     </div>
+                                </div>
+                                <div className="col-lg-4">
                                     <div className="form-group">
                                         <label>Experience</label>
                                         <select name="experience" id="experience" className="form-control"
@@ -129,6 +131,14 @@ export default function AddNewGuideBodyForm() {
                                         <input type="mobile" name="mobile" id="mobile" className="form-control"
                                             onChange={(e) => {
                                                 setPhone(e.target.value);
+                                            }
+                                            } />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Image</label>
+                                        <input type="text" name="Img" id="Img" className="form-control"
+                                            onChange={(e) => {
+                                                setImg(e.target.value);
                                             }
                                             } />
                                     </div>
@@ -178,7 +188,7 @@ export default function AddNewGuideBodyForm() {
                                         <td>{val.Phone}</td>
                                         <td>{val.Experience}</td>
                                         <td>{val.Fee}</td>
-                                        <td><button className="btn btn-success">Update</button></td>
+                                        <td><a href={`/admin/ground/guide/update/${val._id}`} className="btn btn-success">Update</a></td>
                                         <td><button className="btn btn-danger" onClick={()=>deleteGuide(val._id)}>Delete</button></td>
                                     </tr>
                                 );

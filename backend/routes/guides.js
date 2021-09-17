@@ -11,6 +11,7 @@ router.route("/add").post((req,res)=>{
     let Phone = req.body.Phone;
     let Experience = req.body.Experience;
     let Fee = req.body.Fee;
+    let Img = req.body.Img;
 
     const guideobj = new guide({
         Guide_ID,
@@ -20,7 +21,8 @@ router.route("/add").post((req,res)=>{
         Email,
         Phone,
         Experience,
-        Fee
+        Fee,
+        Img
     });
 
     guideobj.save().then(()=>{
@@ -53,6 +55,7 @@ router.route("/update/:id").put((req,res)=>{
     let Phone = req.body.Phone;
     let Experience = req.body.Experience;
     let Fee = req.body.Fee;
+    let Img = req.body.Img;
 
     const updateGuide = {
         Guide_ID,
@@ -62,7 +65,8 @@ router.route("/update/:id").put((req,res)=>{
         Email,
         Phone,
         Experience,
-        Fee
+        Fee,
+        Img
     }
 
     guide.findByIdAndUpdate(id,updateGuide).then((updateGuide)=>{

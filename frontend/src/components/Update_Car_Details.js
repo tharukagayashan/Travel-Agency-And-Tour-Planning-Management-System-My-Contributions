@@ -6,7 +6,6 @@ export default function Update_Car_Details(props) {
     const id = props.match.params.id;
     const [data, setData] = useState('');
 
-
     useEffect(() => {
         axios.get(`http://localhost:8080/car/${id}`).then((res) => {
             setData(res.data);
@@ -20,7 +19,7 @@ export default function Update_Car_Details(props) {
     function updateData(event) {
         event.preventDefault();
         axios.put(`http://localhost:8080/car/update/${id}`, data).then(() => {
-            alert("update Successfully");
+            alert("updated Successfully");
 
         }).catch((err) => {
             console.log(err);

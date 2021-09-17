@@ -28,8 +28,8 @@ export default function admin() {
                             <ul>
                                 <li ><a href="/"><HouseIcon style={{ fontSize: 30,color:"#5584FF"}}/><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Accommadation</span></a></li>
                                 <li><a href="/admin/tickets"><ConfirmationNumberIcon style={{ fontSize: 30,color:"#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Ticket</span></a></li>
-                                <li><a href="/admin/"><LocalTaxiIcon style={{ fontSize: 30,color:"/5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Ground</span></a></li>
-                                <li><a href="/"><ExploreIcon style={{ fontSize: 30,color:"/5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Tour Package</span></a></li>
+                                <li><a href="/admin/"><LocalTaxiIcon style={{ fontSize: 30,color:"#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Ground</span></a></li>
+                                <li><a href="/"><ExploreIcon style={{ fontSize: 30,color:"#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Tour Package</span></a></li>
                                 <li><a href="/"><DescriptionIcon style={{ fontSize: 30,color:"#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Travel Document</span></a></li>
                                 <li><a href="/"><SecurityIcon style={{ fontSize: 30,color:"#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Insurance</span></a></li>
                                 <li><a href="/"><EventIcon style={{ fontSize: 30,color:"#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Event</span></a></li>

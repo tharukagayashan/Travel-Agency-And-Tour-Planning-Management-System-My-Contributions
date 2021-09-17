@@ -35,6 +35,10 @@ const Guide = new Schema({
     Fee:{
         type:Number,
         required:true
+    },
+    Img:{
+        type:String,
+        required:true
     }
 });
 

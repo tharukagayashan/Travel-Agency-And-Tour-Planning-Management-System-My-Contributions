@@ -28,7 +28,7 @@ export default function GuideReservationBody() {
                             &nbsp;
                             <div className="col mt-3 mb-2">
                                 <ul style={{ listStyle: "none" }} className="card p-1">
-                                    <li><img src="https://imageresizer.static9.net.au/-x5Z-OfpYVwC3q10I1_ZVamYMU8=/1920x0/filters:format(webp)/vms-tv-images-prod.s3-ap-southeast-2.amazonaws.com%2F2021%2F07%2F371989%2Ftravelguidess4_genericlook_ctv_standardcard.jpg" width="200px" className="m-3" /></li>
+                                    <li><img src={val.Img} width="200px" height="150px" className="m-3" /></li>
                                     <li>{val.Full_Name}</li>
                                     <li>{val.Experience}</li>
                                     <li>{val.Email}</li>

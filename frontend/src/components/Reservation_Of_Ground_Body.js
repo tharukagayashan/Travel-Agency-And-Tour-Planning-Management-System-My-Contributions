@@ -11,7 +11,7 @@ export default function ReservationOfGroundBody() {
                     <h2 className="text-light">Airport Taxi</h2>
                     <div class="card h-80 shadow-sm"> <img src="https://media.istockphoto.com/vectors/happy-family-trip-and-taxi-service-illustration-vector-id1151360678?k=20&m=1151360678&s=612x612&w=0&h=72hkXZXthPl65ofu2rcjh2CXKlFiDWR4viPqXhUxg64=" class="card-img-top" alt="..." />
                         <div class="card-body">
-                            <div class="text-center my-4"> <a href="/ground/car" class="btn btn-danger">Click to book</a> </div>
+                            <div class="text-center my-4"> <a href="/ground/airporttaxi" class="btn btn-danger">Click to book</a> </div>
                             <div><p>Reservation of your Airport Taxi</p></div>
                         </div>
                     </div>

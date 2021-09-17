@@ -15,9 +15,9 @@ export default function GroundAdmin() {
                     </div>
 
                     <div>
-                    <a className="btn btn-danger  m-4 p-3" href={"/admin/ground/carreservation"}>Car Reservations</a>
-                    <a className="btn btn-danger m-4 p-3" href={""}>Guide Reservation</a>
-</div>
+                        <a className="btn btn-danger  m-4 p-3" href={"/admin/ground/carreservation"}>Car Reservations</a>
+                        <a className="btn btn-danger m-4 p-3" href={"/admin/ground/guidereservation"}>Guide Reservation</a>
+                    </div>
                 </div>
             </div>
         </div>

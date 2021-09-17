@@ -3,13 +3,11 @@ import axios from 'axios';
 
 export default function CarReservationBody() {
 
-    const [Date, setDate] = useState("");
-    const [Time, setTime] = useState("");
+
     const [From, setFrom] = useState("");
-    const [To, setTo] = useState("");
     const [Type, setType] = useState("");
 
-
+/*
     function addNewCarReservation(e) {
         e.preventDefault();
 
@@ -24,7 +22,7 @@ export default function CarReservationBody() {
         });
 
     }
-
+*/
 
     const [cars, setCars] = useState([]);
 
@@ -100,15 +98,12 @@ export default function CarReservationBody() {
                 <div>
                     {
                         cars.map((val, key) => {
-                            if (val.Car_Type == "Car") {
-                                if (val.Car_Type == "Airport Taxi") {
-                                    var img = "https://images.unsplash.com/photo-1518614768202-663a3a0ecf59?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwdGF4aXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                            if (val.Car_Type == "Airport Taxi") {
+                                if(val.Car_Type == "Airport Taxi"){
+                                    var img="https://images.unsplash.com/photo-1518614768202-663a3a0ecf59?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwdGF4aXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
                                 }
-                                else if (val.Car_Type == "Car") {
-                                    var img = "https://cdn.luxe.digital/media/2020/12/16175821/most-expensive-cars-2021-Maserati-MC20-luxe-digital%402x.jpg"
-                                }
-                                else {
-                                    var img = "";
+                                else{
+                                    var img="https://cdn.luxe.digital/media/2020/12/16175821/most-expensive-cars-2021-Maserati-MC20-luxe-digital%402x.jpg"
                                 }
 
                                 return (
