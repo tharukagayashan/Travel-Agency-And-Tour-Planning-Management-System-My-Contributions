@@ -65,7 +65,7 @@ export default function admin() {
 
                             </header>
                         </div>
-                        <GroundAdmin/>
+                            <GroundAdmin/>
                     </div>
                 </div>
 

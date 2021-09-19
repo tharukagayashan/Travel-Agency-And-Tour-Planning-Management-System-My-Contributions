@@ -3,28 +3,6 @@ import axios from 'axios';
 
 export default function CarReservationBody() {
 
-    const [Date, setDate] = useState("");
-    const [Time, setTime] = useState("");
-    const [From, setFrom] = useState("");
-    const [To, setTo] = useState("");
-    const [Type, setType] = useState("");
-
-
-    function addNewCarReservation(e) {
-        e.preventDefault();
-
-        const addCarReservation = {
-            Date, Time, From, To, Type
-        }
-
-        axios.post("http://localhost:8080/carreservation/add", addCarReservation).then(() => {
-            alert("Car Reservation successfully");
-        }).catch((err) => {
-            alert(err);
-        });
-
-    }
-
 
     const [cars, setCars] = useState([]);
 
@@ -49,11 +27,7 @@ export default function CarReservationBody() {
                             <div className="col-lg-3">
 
                                 <label>Brand</label>
-                                <select name="from" id="from" className="form-control"
-                                    onChange={(e) => {
-                                        setFrom(e.target.value);
-                                    }
-                                    }>
+                                <select name="from" id="from" className="form-control">
                                     <option value="Select one">Select one</option>
                                     <option value="TOYOTA">TOYOTA</option>
                                     <option value="BMW">BMW</option>
@@ -70,11 +44,7 @@ export default function CarReservationBody() {
 
                                 <label>Location</label>
 
-                                <select name="Location" id="type" className="form-control"
-                                    onChange={(e) => {
-                                        setType(e.target.value);
-                                    }
-                                    }>
+                                <select name="Location" id="type" className="form-control">
                                     <option value="Select one">Select one</option>
                                     <option value="Colombo">Colombo</option>
                                     <option value="Hambantota">Hambantota</option>
@@ -101,21 +71,12 @@ export default function CarReservationBody() {
                     {
                         cars.map((val, key) => {
                             if (val.Car_Type == "Car") {
-                                if (val.Car_Type == "Airport Taxi") {
-                                    var img = "https://images.unsplash.com/photo-1518614768202-663a3a0ecf59?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwdGF4aXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
-                                }
-                                else if (val.Car_Type == "Car") {
-                                    var img = "https://cdn.luxe.digital/media/2020/12/16175821/most-expensive-cars-2021-Maserati-MC20-luxe-digital%402x.jpg"
-                                }
-                                else {
-                                    var img = "";
-                                }
-
+                                
                                 return (
                                     <div className="row m-1 mb-2" style={{ float: "left", listStyle: "none" }}>
                                         <div className="col mt-2 mb-2">
                                             <ul style={{ flistStyle: "none" }} className="card p-1">
-                                                <li><img src={img} width="200px" height="150px" className="m-3" /></li>
+                                                <li><img src={val.Img} width="200px" height="150px" className="m-3" /></li>
                                                 <li><h2>{val.Car_Type}</h2></li>
                                                 <li>Brand : {val.Brand}</li>
                                                 <li>Model : {val.Model}</li>

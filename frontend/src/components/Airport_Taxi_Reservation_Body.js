@@ -99,18 +99,12 @@ export default function CarReservationBody() {
                     {
                         cars.map((val, key) => {
                             if (val.Car_Type == "Airport Taxi") {
-                                if(val.Car_Type == "Airport Taxi"){
-                                    var img="https://images.unsplash.com/photo-1518614768202-663a3a0ecf59?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwdGF4aXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
-                                }
-                                else{
-                                    var img="https://cdn.luxe.digital/media/2020/12/16175821/most-expensive-cars-2021-Maserati-MC20-luxe-digital%402x.jpg"
-                                }
 
                                 return (
                                     <div className="row m-1 mb-2" style={{ float: "left", listStyle: "none" }}>
                                         <div className="col mt-2 mb-2">
                                             <ul style={{ flistStyle: "none" }} className="card p-1">
-                                                <li><img src={img} width="200px" height="150px" className="m-3" /></li>
+                                                <li><img src={val.Img} width="200px" height="150px" className="m-3" /></li>
                                                 <li><h2>{val.Car_Type}</h2></li>
                                                 <li>Brand : {val.Brand}</li>
                                                 <li>Model : {val.Model}</li>

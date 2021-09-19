@@ -16,6 +16,17 @@ export default function AddminCarReservationView() {
             });
     }, []);
 
+
+    function deleteCar(id) {
+        axios.delete(`http://localhost:8080/carreservation/delete/${id}`)
+            .then(() => {
+                alert("Deleted Successfully");
+            }).catch((err) => {
+                alert("error : " + err);
+            });
+        window.location.reload();
+    }
+
     return (
         <div className="container">
 
@@ -31,6 +42,7 @@ export default function AddminCarReservationView() {
                         <td>From</td>
                         <td>To</td>
                         <td>Type</td>
+                        <td>Car ID</td>
                         <td>Update</td>
                         <td>Delete</td>
                     </tr>
@@ -43,9 +55,10 @@ export default function AddminCarReservationView() {
                                 <td>{val.Time}</td>
                                 <td>{val.From}</td>
                                 <td>{val.To}</td>
-                                <td>{val.Type}</td>
-                                <td><input type="button" name="update" value="Update" className="btn btn-success"/></td>
-                                <td><input type="button" name="delete" value="Delete" className="btn btn-danger"/></td>
+                                <td>{val.Car_Type}</td>
+                                <td>{val.Car_ID}</td>
+                                <td><a href={`/admin/ground/carreservation/update/${val._id}`} className="btn btn-success">Update</a></td>
+                                <td><input type="button" name="delete" value="Delete" className="btn btn-danger" onClick={() => deleteCar(val._id)}/></td>
                             </tr>
                         )
                     })

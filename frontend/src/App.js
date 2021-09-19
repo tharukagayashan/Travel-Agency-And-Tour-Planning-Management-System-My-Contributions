@@ -20,6 +20,8 @@ import AdminGuideReservationView from './components/Admin_Guide_Reservation_View
 import AirportTaxiReservationHeader from './components/Airport_Taxi_Reservation_Header';
 import AirportTaxiReservationBody from './components/Airport_Taxi_Reservation_Body';
 import ViewCarProfile from './components/View_Car_Profile';
+import AdminCarReservationUpdate from './components/Admin_Car_Reservation_Update';
+import AdminGuideReservationUpdate from './components/Admin_Guide_Reservation_Update'
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
               <Route exact path="/ground/airporttaxi" component={Navbar}></Route>
               <Route exact path="/ground/guide/guideprofile/:id" component={Navbar}></Route>
 
+
+
               <Route exact path="/admin" component={Admin}></Route>
               
               <Route exact path="/ground" component={ResHeader}></Route>
@@ -59,14 +63,17 @@ function App() {
               <Route exact path="/ground/airporttaxi" component={AirportTaxiReservationHeader}></Route>
               <Route exact path="/ground/airporttaxi" component={AirportTaxiReservationBody}></Route>
               <Route exact path="/ground/car/carprofile/:id" component={ViewCarProfile}></Route> 
+              <Route exact path="/admin/ground/carreservation/update/:id" component={AdminCarReservationUpdate}></Route>
+              <Route exact path="/admin/ground/guidereservation/update/:id" component={AdminGuideReservationUpdate}></Route>
 
               <Route exact path="/" component={Footer}></Route>
               <Route exact path="/ground" component={Footer}></Route>
               <Route exact path="/ground/car" component={Footer}></Route>
               <Route exact path="/ground/guide/guideprofile/:id" component={Footer}></Route>
               <Route exact path="/ground/airporttaxi" component={Footer}></Route>
-             {/* <Route exact path="/ground/guide" component={Footer}></Route>*/}
+             {/* <Route exact path="/ground/guide/" component={Footer}></Route>*/}
           
+
           </BrowserRouter>
     
     </div>

@@ -20,7 +20,11 @@ const Car_Reservation = new Schema({
         type:String,
         required:true
     },
-    Type:{
+    Car_Type:{
+        type:String,
+        required:true
+    },
+    Car_ID:{
         type:String,
         required:true
     }

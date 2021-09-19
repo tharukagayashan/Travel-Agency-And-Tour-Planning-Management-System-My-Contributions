@@ -10,11 +10,12 @@ export default function AddNewCarAndAirportTaxi() {
     const [Model, setModel] = useState("");
     const [Location, setLocation] = useState("");
     const [Cost_per_KM, setCostPerKm] = useState("");
+    const [Img,setImg] = useState("");
 
     function dataSend(e) {
         e.preventDefault();
         const newBooking = {
-            Car_ID, Car_Type, Brand, Model, Location, Cost_per_KM
+            Car_ID, Car_Type, Brand, Model, Location, Cost_per_KM,Img
         }
 
         axios.post("http://localhost:8080/car/add",newBooking).then(() => {
@@ -66,7 +67,7 @@ export default function AddNewCarAndAirportTaxi() {
 
                                     <div className="form-group">
                                         <label>ID</label>
-                                        <input type="text" id="id" name="id" className="form-control"
+                                        <input type="text" id="id" name="id" className="form-control" required
                                             onChange={(e) => {
                                                 setId(e.target.value);
                                             }
@@ -74,7 +75,7 @@ export default function AddNewCarAndAirportTaxi() {
                                     </div>
                                     <div className="form-group">
                                         <label>CAR TYPE</label>
-                                        <select name="cartype" id="cartype" className="form-control"
+                                        <select name="cartype" id="cartype" className="form-control" required
                                             onChange={(e) => {
                                                 setCarType(e.target.value);
                                             }
@@ -86,47 +87,55 @@ export default function AddNewCarAndAirportTaxi() {
                                     </div>
                                     <div className="form-group">
                                         <label>BRAND</label>
-                                        <select name="brand" id="brand" className="form-control"
+                                        <select name="brand" id="brand" className="form-control" required
                                             onChange={(e) => {
                                                 setBrand(e.target.value);
                                             }
                                             }>
-                                            <option value="Select one">Select one</option>
-                                            <option value="toyota">Toyota</option>
-                                            <option value="bmw">BMW</option>
-                                            <option value="audi">AUDI</option>
+                                            <option value="">Select one</option>
+                                            <option value="Toyota">Toyota</option>
+                                            <option value="BMW">BMW</option>
+                                            <option value="AUDI">AUDI</option>
                                         </select>
                                     </div>
                                     <div className="form-group">
                                         <label>MODEL</label>
-                                        <input type="text" name="model" id="model" className="form-control"
+                                        <input type="text" name="model" id="model" className="form-control" required
                                             onChange={(e) => {
                                                 setModel(e.target.value);
                                             }
                                             } />
                                     </div>
-                                </div>
-                                <div className="col-lg-4">
                                     <div className="form-group">
                                         <label>LOCATION</label>
-                                        <select name="location" id="location" defaultValue className="form-control"
+                                        <select name="location" id="location" defaultValue className="form-control" required
                                             onChange={(e) => {
                                                 setLocation(e.target.value);
                                             }
                                             }>
-                                            <option value="Select one" >Select one</option>
-                                            <option value="colombo 07">Colombo 07</option>
-                                            <option value="matara">Matara</option>
-                                            <option value="hambantota">Hambantota</option>
-                                            <option value="galle">Galle</option>
-                                            <option value="matara">Matara</option>
+                                            <option value="" >Select one</option>
+                                            <option value="Colombo 07">Colombo 07</option>
+                                            <option value="Matara">Matara</option>
+                                            <option value="Hambantota">Hambantota</option>
+                                            <option value="Galle">Galle</option>
+                                            <option value="Kandy">Matara</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div className="col-lg-4">
                                     <div className="form-group">
                                         <label>COST PER KM</label>
-                                        <input type="text" name="costperkm" id="costperkm" className="form-control"
+                                        <input type="text" name="costperkm" id="costperkm" className="form-control" required
                                             onChange={(e) => {
                                                 setCostPerKm(e.target.value);
+                                            }
+                                            } />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Image</label>
+                                        <input type="text" name="Img" id="Img" className="form-control" required
+                                            onChange={(e) => {
+                                                setImg(e.target.value);
                                             }
                                             } />
                                     </div>

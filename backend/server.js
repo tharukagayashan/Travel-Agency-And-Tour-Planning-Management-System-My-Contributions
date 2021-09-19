@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(bodyParser.json());
 
-const URL = "mongodb+srv://gayashan:gayashan@cluster0.t9e57.mongodb.net/TestDB?retryWrites=true&w=majority";
+const URL = "mongodb+srv://sliititp:sliititp@cluster0.y0tj8.mongodb.net/itpproject?retryWrites=true&w=majority";
 
 mongoose.connect(URL,{
     useCreateIndex:true,

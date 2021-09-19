@@ -53,7 +53,7 @@ export default function AddminGuideReservationView() {
                                 <td>{val.No_of_Days}</td>
                                 <td>{val.Starting_point}</td>
                                 <td>{val.Tour_place}</td>
-                                <td><input type="button" name="update" value="Update" className="btn btn-success"/></td>
+                                <td><a href={`/admin/ground/guidereservation/update/${val._id}`} className="btn btn-success">Update</a></td>
                                 <td><input type="button" name="delete" value="Delete" onClick={() => deleteGuideRes(val._id)} className="btn btn-danger"/></td>
                             </tr>
                         )

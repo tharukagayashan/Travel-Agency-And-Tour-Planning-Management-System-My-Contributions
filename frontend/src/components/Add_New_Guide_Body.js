@@ -66,7 +66,7 @@ export default function AddNewGuideBodyForm() {
 
                                     <div className="form-group">
                                         <label>Full Name</label>
-                                        <input type="text" id="fullname" name="fullname" className="form-control"
+                                        <input type="text" id="fullname" name="fullname" className="form-control" required
                                             onChange={(e) => {
                                                 setFullName(e.target.value);
                                             }
@@ -74,7 +74,7 @@ export default function AddNewGuideBodyForm() {
                                     </div>
                                     <div className="form-group">
                                         <label>Age</label>
-                                        <input type="text" name="age" id="age" className="form-control"
+                                        <input type="text" name="age" id="age" className="form-control" required
                                             onChange={(e) => {
                                                 setAge(e.target.value);
                                             }
@@ -82,7 +82,7 @@ export default function AddNewGuideBodyForm() {
                                     </div>
                                     <div className="form-group">
                                         <label>Address</label>
-                                        <input type="text" name="address" id="address" className="form-control"
+                                        <input type="text" name="address" id="address" className="form-control" required
                                             onChange={(e) => {
                                                 setAddress(e.target.value);
                                             }
@@ -90,7 +90,7 @@ export default function AddNewGuideBodyForm() {
                                     </div>
                                     <div className="form-group">
                                         <label>Email</label>
-                                        <input type="email" name="email" id="email" className="form-control"
+                                        <input type="email" name="email" id="email" className="form-control" required
                                             onChange={(e) => {
                                                 setEmail(e.target.value);
                                             }
@@ -98,7 +98,7 @@ export default function AddNewGuideBodyForm() {
                                     </div>
                                     <div className="form-group">
                                         <label>Fee</label>
-                                        <input type="text" name="fee" id="fee" className="form-control"
+                                        <input type="text" name="fee" id="fee" className="form-control" required
                                             onChange={(e) => {
                                                 setFee(e.target.value);
                                             }
@@ -106,7 +106,7 @@ export default function AddNewGuideBodyForm() {
                                     </div>
                                     <div className="form-group">
                                         <label>Guide ID</label>
-                                        <input type="text" name="guideid" id="guideid" className="form-control"
+                                        <input type="text" name="guideid" id="guideid" className="form-control" required
                                             onChange={(e) => {
                                                 setGuideID(e.target.value);
                                             }
@@ -116,19 +116,19 @@ export default function AddNewGuideBodyForm() {
                                 <div className="col-lg-4">
                                     <div className="form-group">
                                         <label>Experience</label>
-                                        <select name="experience" id="experience" className="form-control"
+                                        <select name="experience" id="experience" className="form-control" required
                                             onChange={(e) => {
                                                 setExperience(e.target.value);
                                             }
                                             }>
-                                            <option value="Select one" >Select one</option>
+                                            <option value="" >Select one</option>
                                             <option value="Beginner">Beginner</option>
                                             <option value="Expert">Expert</option>
                                         </select>
                                     </div>
                                     <div className="form-group">
                                         <label>Mobile Number</label>
-                                        <input type="mobile" name="mobile" id="mobile" className="form-control"
+                                        <input type="tel" name="mobile" id="mobile" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" className="form-control"
                                             onChange={(e) => {
                                                 setPhone(e.target.value);
                                             }

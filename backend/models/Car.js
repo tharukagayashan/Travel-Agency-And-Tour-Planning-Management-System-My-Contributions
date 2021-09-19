@@ -26,6 +26,10 @@ const Car = new Schema({
     Cost_per_KM:{
         type:Number,
         required:true
+    },
+    Img:{
+        type:String,
+        required:true
     }
 });
 

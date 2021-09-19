@@ -20,6 +20,7 @@ export default function GuideReservationBody() {
             <div>
                 <h1 className="bg-light p-3">SELECT AND BOOK YOUR TRAVEL GUIDE</h1>
             </div>
+            <div>
             {
                 Guides.map((val, key) => {
                     return (
@@ -40,7 +41,7 @@ export default function GuideReservationBody() {
                     );
                 })
             }
-
+        </div>
         </div >
     );
 

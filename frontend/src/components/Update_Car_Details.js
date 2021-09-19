@@ -39,7 +39,7 @@ export default function Update_Car_Details(props) {
             <h1 className="text-light">Update Form</h1>
                 <div className="col-lg-4"></div>
                 <div className="col-lg-4">
-                    <form className="mt-4 text-light p-3 bg-light" onSubmit={updateData}>
+                    <form className="mt-4 text-dark p-3 bg-light" onSubmit={updateData}>
                         <div className="row">
 
                             <div className="form-group">
@@ -58,9 +58,9 @@ export default function Update_Car_Details(props) {
                                 <label>BRAND</label>
                                 <select name="Brand" className="form-control" value={data.Brand} onChange={handleChange} >
                                     <option value="Select one">Select one</option>
-                                    <option value="toyota">Toyota</option>
-                                    <option value="bmw">BMW</option>
-                                    <option value="audi">AUDI</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="AUDI">AUDI</option>
                                 </select>
                             </div>
                             <div className="form-group">
@@ -83,6 +83,10 @@ export default function Update_Car_Details(props) {
                                 <label>COST PER KM</label>
                                 <input type="text" name="Cost_per_KM" className="form-control" value={data.Cost_per_KM} onChange={handleChange} />
                             </div>
+                            <div className="form-group">
+                                        <label>Image</label>
+                                        <input type="text" name="Img" id="Img" value={data.Img} className="form-control" onChange={handleChange}/>
+                                    </div>
                             <div className="form-group">
                                 <input type="submit" name="Update" value="Update" className="btn btn-success mt-4 form-control" />
                                 <input type="button" name="Cancel" value="Cancel" className="btn btn-danger mt-4 form-control" />

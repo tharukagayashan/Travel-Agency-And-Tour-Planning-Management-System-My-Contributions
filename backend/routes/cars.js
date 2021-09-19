@@ -9,6 +9,7 @@ router.route("/add").post((req,res)=>{
     let Model = req.body.Model;
     let Location = req.body.Location;
     let Cost_per_KM = req.body.Cost_per_KM;
+    let Img = req.body.Img;
 
     const carobj = new car({
         Car_ID,
@@ -16,7 +17,8 @@ router.route("/add").post((req,res)=>{
         Brand,
         Model,
         Location,
-        Cost_per_KM
+        Cost_per_KM,
+        Img
     });
 
     carobj.save().then(()=>{
@@ -59,6 +61,7 @@ router.route("/update/:id").put((req,res)=>{
     let Model = req.body.Model;
     let Location = req.body.Location;
     let Cost_per_KM = req.body.Cost_per_KM;
+    let Img = req.body.Img;
 
     const updateCar = {
         Car_ID,
@@ -66,7 +69,8 @@ router.route("/update/:id").put((req,res)=>{
         Brand,
         Model,
         Location,
-        Cost_per_KM
+        Cost_per_KM,
+        Img
     }
 
     car.findByIdAndUpdate(id,updateCar).then((updateCar)=>{

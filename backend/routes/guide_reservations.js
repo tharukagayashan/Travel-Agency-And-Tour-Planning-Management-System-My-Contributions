@@ -49,7 +49,7 @@ router.route("/update/:id").put((req,res)=>{
         Guide_ID
     }
 
-    guideReservation.findByIdAndUpdate(id,updateGuideRes).then((updateGuideRes)=>{
+    guideReservation.findByIdAndUpdate(id,updateGuideReservation).then((updateGuideRes)=>{
         res.json(updateGuideRes);
     }).catch((err)=>{
         console.log(err);
@@ -68,5 +68,18 @@ router.route("/delete/:id").delete((req,res)=>{
     });
 
 });
+
+
+router.route("/:id").get((req,res)=>{
+
+    let id = req.params.id;
+
+    guideReservation.findById(id).then((data)=>{
+        res.json(data);
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+})
 
 module.exports = router;

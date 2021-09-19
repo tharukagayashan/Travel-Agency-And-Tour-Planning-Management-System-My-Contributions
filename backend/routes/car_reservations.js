@@ -7,14 +7,16 @@ router.route("/add").post((req,res)=>{
     const Time = req.body.Time;
     const From = req.body.From;
     const To = req.body.To;
-    const Type = req.body.Type;
+    const Car_Type = req.body.Car_Type;
+    const Car_ID = req.body.Car_ID;
 
     const carreservationobj = new carReservation({
         Date,
         Time,
         From,
         To,
-        Type
+        Car_Type,
+        Car_ID
     });
 
     carreservationobj.save().then(()=>{
@@ -43,7 +45,8 @@ router.route("/update/:id").put((req,res)=>{
     const Time = req.body.Time;
     const From = req.body.From;
     const To = req.body.To;
-    const Type = req.body.Type;
+    const Car_Type = req.body.Car_Type;
+    const Car_ID = req.body.Car_ID;
 
     const updateCarReservation = {
 
@@ -51,7 +54,8 @@ router.route("/update/:id").put((req,res)=>{
         Time,
         From,
         To,
-        Type
+        Car_Type,
+        Car_ID
     
     }
 
@@ -74,5 +78,17 @@ router.route("/delete/:id").delete((req,res)=>{
     });
 
 });
+
+router.route("/:id").get((req,res)=>{
+
+    let id = req.params.id;
+
+    carReservation.findById(id).then((data)=>{
+        res.json(data);
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+})
 
 module.exports = router;
